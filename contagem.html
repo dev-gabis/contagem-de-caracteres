@@ -1,0 +1,28 @@
+<html>
+<!--
+	@author: Andre Cardoso (andrebian.com)
+-->	
+<link rel="stylesheet" href="style.css">
+<head>
+	<title>Contagem de caracteres - Andrebian.com</title>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#campoDigitacao").keyup(function(){
+				texto = $(this).val();
+				caracteres = texto.length;
+				palavras = texto.split(" ");
+				$("#quantCaracteres").html(caracteres);
+				if ( palavras[palavras.length] != "" ) {
+					$("#quantPalavras").html(palavras.length);	
+				}
+			});
+		});
+	</script>
+</head>	
+<body>
+	<h1> Seu texto possui<span id="quantCaracteres">0</span>caracteres e<span id="quantPalavras">0</span>palavras. </h1>
+	<textarea style="width: 900px; height: 400px; " id="campoDigitacao"></textarea>
+	<br />
+</body>
+</html>
